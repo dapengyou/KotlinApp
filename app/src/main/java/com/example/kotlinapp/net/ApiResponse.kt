@@ -14,7 +14,11 @@ import io.reactivex.disposables.Disposable
 abstract class ApiResponse<T>(val context: Context) : Observer<LoginResponseWrapper<T>> {
     abstract fun success(data: T?)
     abstract fun failure(errorMsg: String?)
-    private var isShow: Boolean = false
+    private var isShow: Boolean = true
+
+    constructor(context: Context, isShow: Boolean = false) : this(context) {
+        this.isShow = isShow
+    }
 
     override fun onSubscribe(d: Disposable?) {
         if (isShow) {

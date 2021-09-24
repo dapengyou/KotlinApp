@@ -10,7 +10,7 @@ import com.example.kotlinapp.R
  * @Description:
  */
 object LoadingDialog {
-    var dialog: Dialog? = null;
+    var dialog: Dialog? = null
     fun show(context: Context) {
         cancel()
         dialog = Dialog(context)
